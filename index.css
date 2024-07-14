@@ -1,0 +1,233 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Open Sans", sans-serif;
+}
+
+section {
+  margin-bottom: 70px;
+}
+
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url(brunsh.png/brunsh.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  background-color: #212121;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  z-index: -1;
+}
+
+.header .container {
+  padding: 10px;
+  position: fixed;
+  z-index: 1000;
+}
+
+.header a img {
+  margin-left: 100px;
+}
+@media (max-width: 900px) {
+  .header a img {
+    margin-left: 20px;
+  }
+  .info h1 {
+    font-size: 60px;
+  }
+
+  .info h3 {
+    font-size: 20px;
+  }
+}
+
+.header .buy {
+  font-size: 13px;
+  border-radius: 18px;
+  padding: 5px 10px;
+  border: 2px solid white;
+  color: white;
+  margin-left: 3px auto;
+  font-weight: 500;
+  text-align: end;
+}
+
+.header .buy:hover {
+  color: white;
+  background-color: #89715b;
+  border-color: #89715b;
+}
+.info {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+.info div h1 {
+  letter-spacing: 1.6px;
+  font-size: 60px;
+}
+.info .buy {
+  margin-top: 30px;
+}
+.cards {
+  position: relative;
+  box-shadow: 5px 5px 10px #9595956c;
+  margin-bottom: 50px;
+  max-width: 100%;
+}
+
+.cards:hover {
+  animation-name: up-down;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+.cards::before {
+  content: "\f061";
+  position: absolute;
+  font-family: "font Awesome 6 free";
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s ease;
+  padding: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 2;
+  display: none;
+}
+
+.cards:hover::before {
+  display: block;
+  background-color: white;
+  color: blue;
+ 
+}
+
+.cards::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(151, 134, 103, 0.493);
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: 0.5s ease;
+}
+.cards:hover::after {
+  display: block;
+}
+
+.cards img {
+  position: relative;
+  height: 350px;
+}
+
+.cards div h3 {
+  text-transform: capitalize;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.features .container .box {
+  margin-bottom: 40px;
+}
+
+.features .container h1 {
+  font-weight: 100;
+  margin-bottom: 80px;
+  margin-right: 5px;
+}
+
+.features .container i {
+  font-size: 30px;
+  color: #89715b;
+}
+.features .container .text {
+  margin-left: 10px;
+  color: rgb(63, 63, 63);
+}
+.features .container .text h5 {
+  font-size: 25px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+.features .container .text p {
+  color: grey;
+  font-weight: 400;
+  line-height: 1.6;
+}
+footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #212121;
+}
+footer h1 {
+  margin-left: 40px;
+  font-weight: 300;
+  color: white;
+  font-size: 35px;
+}
+
+footer .buy {
+  font-size: 13px;
+  border-radius: 18px;
+  padding: 5px 10px;
+  border: 2px solid white;
+  color: white;
+  font-weight: 500;
+  margin-right: 40px;
+}
+
+footer .buy:hover {
+  color: white;
+  background-color: #89715b;
+  border-color: #89715b;
+}
+@media(max-width:991px){
+  footer {
+    text-align: center;
+    flex-direction: column;
+    font-size: 14px;
+  }
+   footer h1{
+    margin: 15px 0;
+    font-size: 22px;
+ }
+
+}
+
+@keyframes up-down {
+  0%,
+  50% {
+    transform: translateY(-6px);
+  }
+  50%,
+  80% {
+    transform: translateY(-20px);
+  }
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+}
